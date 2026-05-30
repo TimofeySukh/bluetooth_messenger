@@ -42,6 +42,18 @@ dist/BluetoothMessenger-macOS.zip
 
 Because this app is not notarized, macOS may require opening it from Finder with `Control` + click, then `Open`.
 
+If macOS says the downloaded app is damaged, remove the quarantine flag after unzipping:
+
+```bash
+xattr -dr com.apple.quarantine "/Applications/Bluetooth Messenger.app"
+```
+
+If the app is still in Downloads, use that path instead:
+
+```bash
+xattr -dr com.apple.quarantine "$HOME/Downloads/Bluetooth Messenger.app"
+```
+
 ## Usage
 
 1. Run the app on two nearby Macs.

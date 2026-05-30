@@ -35,6 +35,9 @@ iconutil -c icns "$ICONSET_DIR" -o "$RESOURCES_DIR/AppIcon.icns"
 
 chmod +x "$MACOS_DIR/$APP_NAME"
 
+codesign --force --deep --sign - "$APP_DIR"
+codesign --verify --deep --strict --verbose=2 "$APP_DIR"
+
 ditto -c -k --keepParent "$APP_DIR" "$ZIP_PATH"
 
 echo "Built $APP_DIR"
