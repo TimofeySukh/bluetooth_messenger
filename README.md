@@ -25,6 +25,23 @@ You need macOS with Xcode or Command Line Tools installed.
 swift run BluetoothMessenger
 ```
 
+## Build a macOS App
+
+Create a double-clickable `.app` bundle and a zip archive:
+
+```bash
+./scripts/package_app.sh
+```
+
+The packaged app is written to:
+
+```text
+dist/Bluetooth Messenger.app
+dist/BluetoothMessenger-macOS.zip
+```
+
+Because this app is not notarized, macOS may require opening it from Finder with `Control` + click, then `Open`.
+
 ## Usage
 
 1. Run the app on two nearby Macs.
